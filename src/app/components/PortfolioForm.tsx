@@ -37,10 +37,10 @@ export default function PortfolioForm() {
       phone: data.phone,
       school: data.school,
       gpa: parseFloat(data.gpa),
-      talent: data.talent ?? '',
-      reason: data.reason ?? '',
-      major: data.major ?? '',
-      university: data.university ?? '',
+      talent: data.talent || '',
+      reason: data.reason || '',
+      major: data.major || '',
+      university: data.university || '',
       photoUrl,
     })
 
@@ -49,7 +49,7 @@ export default function PortfolioForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4 max-w-xl">
+    <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4 max-w-xl mx-auto p-4">
       <input
         {...register('firstName', { required: 'กรุณากรอกชื่อ' })}
         placeholder="ชื่อ"
